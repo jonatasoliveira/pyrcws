@@ -1,1 +1,3 @@
-from main import GetAuthorizedException, PaymentAttempt
+# -*- coding: utf-8 -*-
+
+from main import GetAuthorizedException, ConfirmTxnException, PaymentAttempt

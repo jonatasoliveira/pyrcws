@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from decimal import Decimal
 
 
-def moneyfmt(value, places=2, curr='', sep='', dp='.',
-             pos='', neg='-', trailneg=''):
+def moneyfmt(value, places=2, curr='', sep='', dp='.', pos='', neg='-',
+             trailneg=''):
     """Convert Decimal to a money formatted string.
 
     places:  required number of places after the decimal point
@@ -25,9 +27,9 @@ def moneyfmt(value, places=2, curr='', sep='', dp='.',
     '123 456 789.00'
     >>> moneyfmt(Decimal('-0.02'), neg='<', trailneg='>')
     '<0.02>'
-
     """
-    q = Decimal(10) ** -places      # 2 places --> '0.01'
+    # 2 places --> '0.01'
+    q = Decimal(10) ** -places
     sign, digits, exp = value.quantize(q).as_tuple()
     result = []
     digits = map(str, digits)
